@@ -1,125 +1,117 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NASA FC XD | Un equipo, una familia</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NASA FC XD</title>
+
 <link rel="icon" href="img/escudo.png">
 
 <style>
+
 :root{
   --orange:#ff6a00;
   --orange2:#ff8a00;
-  --black:#090909;
-  --dark:#111;
-  --gray:#1b1b1b;
-  --white:#f7f7f7;
-  --muted:#b9b9b9
+  --black:#080b0d;
+  --dark:#11161a;
+  --dark2:#172027;
+  --line:#29343a;
+  --white:#f5f5f5;
+  --gray:#aeb6bc;
 }
 
 *{
-  box-sizing:border-box
+  box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth
+  scroll-behavior:smooth;
 }
 
 body{
   margin:0;
-  background:var(--black);
+  background:#080b0d;
   color:var(--white);
-  font-family:Arial,Helvetica,sans-serif
+  font-family:Arial,Helvetica,sans-serif;
 }
 
 a{
   color:inherit;
-  text-decoration:none
+  text-decoration:none;
 }
 
 .container{
   width:min(1120px,92%);
-  margin:auto
+  margin:auto;
 }
 
-/* NAV */
+/* =========================
+   NAV
+========================= */
 
 nav{
   position:fixed;
   top:0;
   left:0;
   right:0;
-  z-index:10;
-  background:rgba(9,9,9,.9);
+  z-index:100;
+  background:rgba(8,11,13,.94);
   backdrop-filter:blur(10px);
-  border-bottom:1px solid #292929
+  border-bottom:1px solid #202a30;
 }
 
 .navin{
   height:72px;
   display:flex;
   align-items:center;
-  justify-content:space-between
+  justify-content:space-between;
 }
 
 .brand{
   display:flex;
   align-items:center;
   gap:12px;
-  font-weight:900
+  font-weight:900;
 }
 
 .brand img{
   width:44px;
   height:44px;
-  object-fit:contain
+  object-fit:contain;
 }
 
 .brand span{
-  font-size:18px
+  font-size:18px;
 }
 
 .links{
   display:flex;
-  gap:24px;
+  gap:26px;
   font-size:14px;
-  font-weight:700
+  font-weight:800;
 }
 
 .links a:hover{
-  color:var(--orange)
+  color:var(--orange);
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
   min-height:92vh;
   padding-top:72px;
   display:grid;
   place-items:center;
-  position:relative;
-  overflow:hidden;
   background:
     radial-gradient(
       circle at 75% 35%,
-      #542200 0,
-      #180d05 28%,
-      #090909 62%
-    )
-}
-
-.hero:after{
-  content:"";
-  position:absolute;
-  width:520px;
-  height:520px;
-  border:1px solid rgba(255,106,0,.25);
-  border-radius:50%;
-  right:-170px;
-  top:90px;
-  box-shadow:
-    0 0 0 60px rgba(255,106,0,.04),
-    0 0 0 120px rgba(255,106,0,.025)
+      #522000 0,
+      #180d05 27%,
+      #080b0d 65%
+    );
 }
 
 .hero-grid{
@@ -127,40 +119,38 @@ nav{
   grid-template-columns:1.2fr .8fr;
   gap:40px;
   align-items:center;
-  position:relative;
-  z-index:1
 }
 
 .kicker{
   color:var(--orange);
   font-weight:900;
   letter-spacing:3px;
-  text-transform:uppercase
+  text-transform:uppercase;
 }
 
 h1{
   font-size:clamp(48px,9vw,94px);
   line-height:.9;
   margin:14px 0 20px;
-  letter-spacing:-4px
+  letter-spacing:-4px;
 }
 
 h1 span{
-  color:var(--orange)
+  color:var(--orange);
 }
 
 .lead{
   font-size:20px;
   color:#ddd;
-  max-width:620px;
-  line-height:1.5
+  max-width:650px;
+  line-height:1.5;
 }
 
 .buttons{
   display:flex;
   gap:12px;
   flex-wrap:wrap;
-  margin-top:28px
+  margin-top:28px;
 }
 
 .btn{
@@ -168,96 +158,102 @@ h1 span{
   padding:14px 20px;
   border-radius:10px;
   font-weight:900;
-  border:1px solid #333
+  border:1px solid #333;
 }
 
 .primary{
   background:var(--orange);
   border-color:var(--orange);
-  color:#111
+  color:#111;
 }
 
 .primary:hover{
-  background:var(--orange2)
+  background:var(--orange2);
 }
 
 .ghost:hover{
-  border-color:var(--orange)
+  border-color:var(--orange);
 }
 
 .crest{
   display:grid;
-  place-items:center
+  place-items:center;
 }
 
 .crest img{
   width:min(360px,70vw);
-  filter:drop-shadow(0 25px 45px rgba(0,0,0,.7))
+  filter:drop-shadow(0 25px 45px rgba(0,0,0,.7));
 }
 
-/* SECCIONES */
+/* =========================
+   SECCIONES
+========================= */
 
 section{
   padding:90px 0;
-  border-top:1px solid #1e1e1e
+  border-top:1px solid #1e272c;
 }
 
 .eyebrow{
   color:var(--orange);
   font-weight:900;
   text-transform:uppercase;
-  letter-spacing:2px
+  letter-spacing:2px;
 }
 
 h2{
   font-size:42px;
-  margin:8px 0 12px
+  margin:8px 0 12px;
 }
 
 .sectionlead{
-  color:var(--muted);
+  color:var(--gray);
   max-width:700px;
-  line-height:1.6
+  line-height:1.6;
 }
 
-/* TARJETAS */
+/* =========================
+   TARJETAS
+========================= */
 
 .cards{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:14px;
-  margin-top:34px
+  margin-top:34px;
 }
 
 .card{
   background:linear-gradient(145deg,#171717,#0f0f0f);
   border:1px solid #292929;
   border-radius:16px;
-  padding:20px
+  padding:20px;
 }
 
 .num{
   font-size:34px;
   color:var(--orange);
-  font-weight:900
+  font-weight:900;
 }
 
 .card h3{
-  margin:10px 0 6px
+  margin:10px 0 6px;
 }
 
 .card p{
   margin:0;
-  color:var(--muted)
+  color:var(--gray);
 }
 
-/* PLANTILLA */
+/* =========================
+   EQUIPO
+========================= */
 
 .roster{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:14px;
-  margin-top:34px
+  margin-top:34px;
 }
 
 .player{
@@ -267,7 +263,7 @@ h2{
   padding:22px;
   border-radius:16px;
   background:#121212;
-  border:1px solid #292929
+  border:1px solid #292929;
 }
 
 .player:before{
@@ -278,31 +274,27 @@ h2{
   width:130px;
   height:130px;
   border-radius:50%;
-  background:rgba(255,106,0,.1)
+  background:rgba(255,106,0,.1);
 }
 
 .dorsal{
   font-size:13px;
   color:var(--orange);
-  font-weight:900
+  font-weight:900;
 }
 
 .player h3{
   margin:8px 0;
-  font-size:22px
+  font-size:22px;
 }
 
 .pos{
-  color:var(--muted)
+  color:var(--gray);
 }
 
-.pending{
-  color:#777;
-  font-size:13px;
-  margin-top:14px
-}
-
-/* PARTIDOS */
+/* =========================
+   PARTIDOS
+========================= */
 
 .fixture{
   display:grid;
@@ -314,59 +306,207 @@ h2{
   border-radius:16px;
   padding:24px;
   margin-top:30px;
-  text-align:center
+  text-align:center;
 }
 
 .team{
   font-size:22px;
-  font-weight:900
+  font-weight:900;
 }
 
 .vs{
   color:var(--orange);
-  font-weight:900
+  font-weight:900;
 }
 
 .placeholder{
   color:#777;
   margin-top:8px;
-  font-size:14px
+  font-size:14px;
 }
 
-/* SOBRE EL CLUB */
+/* =========================
+   CLASIFICACION
+========================= */
+
+.classification-section{
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255,106,0,.10),
+      transparent 35%
+    ),
+    #070b0e;
+}
+
+.classification-box{
+  margin-top:34px;
+  background:rgba(4,13,19,.97);
+  border:1px solid #26343c;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+
+.classification-title{
+  padding:26px 30px;
+  font-size:28px;
+  font-weight:900;
+  border-bottom:1px solid var(--line);
+}
+
+.classification-head,
+.classification-row{
+  display:grid;
+  grid-template-columns:
+    75px
+    minmax(240px,1fr)
+    repeat(5,65px);
+  align-items:center;
+}
+
+.classification-head{
+  min-height:58px;
+  padding:0 20px;
+  color:#aeb6bc;
+  border-bottom:1px solid var(--line);
+  font-size:13px;
+  font-weight:800;
+  text-align:center;
+}
+
+.classification-head div:nth-child(2){
+  text-align:left;
+}
+
+.classification-row{
+  min-height:92px;
+  padding:0 20px;
+  position:relative;
+  border-bottom:1px solid var(--line);
+}
+
+.classification-row:last-child{
+  border-bottom:0;
+}
+
+.classification-row::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:13px;
+  bottom:13px;
+  width:7px;
+  border-radius:0 5px 5px 0;
+  background:#f44336;
+}
+
+.classification-row.first::before{
+  background:#ffae00;
+}
+
+.classification-row.seventh::before{
+  background:#ffe000;
+}
+
+.classification-position{
+  display:flex;
+  justify-content:center;
+}
+
+.classification-position span{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:#272e37;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+}
+
+.classification-team{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-width:0;
+}
+
+.classification-logo{
+  width:58px;
+  height:58px;
+  flex:0 0 58px;
+  border-radius:10px;
+  background:white;
+  color:#111;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-size:9px;
+  font-weight:900;
+  overflow:hidden;
+}
+
+.classification-logo img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.classification-name{
+  font-weight:800;
+  font-size:16px;
+  line-height:1.2;
+}
+
+.classification-stat{
+  text-align:center;
+  font-weight:700;
+}
+
+.classification-points{
+  font-size:18px;
+}
+
+/* =========================
+   CLUB
+========================= */
 
 .about{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:40px;
-  align-items:start
+  align-items:start;
 }
 
 .info{
   display:grid;
-  gap:12px
+  gap:12px;
 }
 
 .info div{
   padding:18px;
   background:#121212;
   border:1px solid #292929;
-  border-radius:12px
+  border-radius:12px;
 }
 
 .info b{
   display:block;
   color:var(--orange);
-  margin-bottom:4px
+  margin-bottom:4px;
 }
 
-/* FORMULARIO */
+/* =========================
+   CONTACTO
+========================= */
 
 form{
   max-width:650px;
   margin-top:28px;
   display:grid;
-  gap:14px
+  gap:14px;
 }
 
 input,
@@ -377,68 +517,104 @@ textarea{
   border:1px solid #333;
   border-radius:10px;
   padding:14px;
-  font:inherit
+  font:inherit;
 }
 
 textarea{
   min-height:140px;
-  resize:vertical
+  resize:vertical;
 }
 
 button{
-  cursor:pointer
+  cursor:pointer;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
   padding:35px 0;
   border-top:1px solid #222;
-  color:#888
+  color:#888;
 }
 
 .foot{
   display:flex;
   justify-content:space-between;
   gap:20px;
-  flex-wrap:wrap
+  flex-wrap:wrap;
 }
 
-/* RESPONSIVE */
+/* =========================
+   MOVIL
+========================= */
 
 @media(max-width:800px){
 
   .links{
-    display:none
+    display:none;
   }
 
   .hero-grid,
   .about{
-    grid-template-columns:1fr
+    grid-template-columns:1fr;
   }
 
   .hero{
-    padding:110px 0 70px
+    padding:110px 0 70px;
   }
 
   .cards{
-    grid-template-columns:repeat(2,1fr)
+    grid-template-columns:repeat(2,1fr);
   }
 
   .roster{
-    grid-template-columns:1fr 1fr
+    grid-template-columns:1fr 1fr;
   }
 
   .crest{
-    order:-1
+    order:-1;
   }
 
   .crest img{
-    width:220px
+    width:220px;
   }
 
   h2{
-    font-size:34px
+    font-size:34px;
+  }
+
+  .classification-head,
+  .classification-row{
+    grid-template-columns:
+      58px
+      minmax(170px,1fr)
+      55px;
+  }
+
+  .hide-class-mobile{
+    display:none;
+  }
+
+  .classification-row{
+    min-height:86px;
+    padding:0 14px;
+  }
+
+  .classification-position span{
+    width:46px;
+    height:46px;
+  }
+
+  .classification-logo{
+    width:52px;
+    height:52px;
+    flex-basis:52px;
+  }
+
+  .classification-name{
+    font-size:14px;
   }
 }
 
@@ -446,518 +622,945 @@ footer{
 
   .cards,
   .roster{
-    grid-template-columns:1fr
+    grid-template-columns:1fr;
   }
 
   .fixture{
-    grid-template-columns:1fr
+    grid-template-columns:1fr;
   }
 
   .team{
-    font-size:18px
+    font-size:18px;
+  }
+
+  .classification-team{
+    gap:9px;
+  }
+
+  .classification-name{
+    font-size:13px;
   }
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
+<!-- =========================
+     MENU
+========================= -->
 
 <nav>
-  <div class="container navin">
 
-    <a class="brand" href="#inicio">
-      <img src="img/escudo.png" alt="Escudo NASA FC XD">
-      <span>NASA FC XD</span>
-    </a>
+<div class="container navin">
 
-    <div class="links">
-      <a href="#equipo">Equipo</a>
-      <a href="#partidos">Partidos</a>
-      <a href="#club">El club</a>
-      <a href="#contacto">Contacto</a>
-    </div>
+<a class="brand" href="#inicio">
+<img src="img/escudo.png" alt="Escudo NASA FC XD">
+<span>NASA FC XD</span>
+</a>
 
-  </div>
+<div class="links">
+<a href="#equipo">Equipo</a>
+<a href="#partidos">Partidos</a>
+<a href="#clasificacion">Clasificación</a>
+<a href="#club">El club</a>
+<a href="#contacto">Contacto</a>
+</div>
+
+</div>
+
 </nav>
 
 
-<!-- INICIO -->
+<!-- =========================
+     INICIO
+========================= -->
 
 <header class="hero" id="inicio">
 
-  <div class="container hero-grid">
+<div class="container hero-grid">
 
-    <div>
+<div>
 
-      <div class="kicker">
-        Bilbo · Desde 2022
-      </div>
+<div class="kicker">
+Bilbo · Desde 2022
+</div>
 
-      <h1>
-        NASA FC <span>XD</span>
-      </h1>
+<h1>
+NASA FC <span>XD</span>
+</h1>
 
-      <p class="lead">
-        Un grupo de amigos unidos por el fútbol, con ganas de competir,
-        disfrutar de cada partido y seguir creciendo juntos dentro y fuera del campo.
-      </p>
+<p class="lead">
+Un grupo de amigos unidos por el fútbol, con ganas de competir,
+disfrutar de cada partido y seguir creciendo juntos dentro y fuera del campo.
+</p>
 
-      <p class="lead">
-        <strong>Un equipo, una familia.</strong>
-      </p>
+<p class="lead">
+<strong>Un equipo, una familia.</strong>
+</p>
 
-      <div class="buttons">
-        <a class="btn primary" href="#equipo">
-          Conoce al equipo
-        </a>
+<div class="buttons">
 
-        <a class="btn ghost" href="#partidos">
-          Ver partidos
-        </a>
-      </div>
+<a class="btn primary" href="#equipo">
+Conoce al equipo
+</a>
 
-    </div>
+<a class="btn ghost" href="#partidos">
+Ver partidos
+</a>
 
-    <div class="crest">
-      <img
-        src="img/escudo.png"
-        alt="Escudo de NASA FC XD"
-      >
-    </div>
+</div>
 
-  </div>
+</div>
+
+<div class="crest">
+
+<img
+src="img/escudo.png"
+alt="Escudo NASA FC XD"
+>
+
+</div>
+
+</div>
 
 </header>
 
 
-<!-- INFORMACIÓN -->
+<!-- =========================
+     INFORMACION
+========================= -->
 
 <section>
 
-  <div class="container">
+<div class="container">
 
-    <div class="eyebrow">
-      NASA FC XD
-    </div>
+<div class="eyebrow">
+NASA FC XD
+</div>
 
-    <h2>
-      Más que un equipo.
-    </h2>
+<h2>
+Más que un equipo.
+</h2>
 
-    <p class="sectionlead">
-      Competimos en Fútbol Rápido Bizkaia representando a Bilbo.
-      La web irá creciendo con vosotros: partidos, resultados,
-      fotos y estadísticas.
-    </p>
+<p class="sectionlead">
+NASA FC XD es un equipo de amigos unido por el fútbol.
+Aquí podrás consultar la plantilla, los partidos y la clasificación.
+</p>
 
-    <div class="cards">
+<div class="cards">
 
-      <div class="card">
-        <div class="num">2022</div>
-        <h3>Fundación</h3>
-        <p>El comienzo de NASA FC XD.</p>
-      </div>
+<div class="card">
+<div class="num">2022</div>
+<h3>Fundación</h3>
+<p>El comienzo de NASA FC XD.</p>
+</div>
 
-      <div class="card">
-        <div class="num">17</div>
-        <h3>Jugadores</h3>
-        <p>La plantilla actual.</p>
-      </div>
+<div class="card">
+<div class="num">17</div>
+<h3>Jugadores</h3>
+<p>La plantilla actual.</p>
+</div>
 
-      <div class="card">
-        <div class="num">1</div>
-        <h3>Equipo</h3>
-        <p>Fútbol Rápido Bizkaia.</p>
-      </div>
+<div class="card">
+<div class="num">1</div>
+<h3>Equipo</h3>
+<p>Fútbol Rápido Bizkaia.</p>
+</div>
 
-      <div class="card">
-        <div class="num">🟠</div>
-        <h3>Bilbo</h3>
-        <p>Naranja, negro y blanco.</p>
-      </div>
+<div class="card">
+<div class="num">🟠</div>
+<h3>Bilbo</h3>
+<p>Naranja, negro y blanco.</p>
+</div>
 
-    </div>
+</div>
 
-  </div>
+</div>
 
 </section>
 
 
-<!-- EQUIPO -->
+<!-- =========================
+     EQUIPO
+========================= -->
 
 <section id="equipo">
 
-  <div class="container">
+<div class="container">
 
-    <div class="eyebrow">
-      Plantilla
-    </div>
+<div class="eyebrow">
+Plantilla
+</div>
 
-    <h2>
-      Nuestro equipo
-    </h2>
+<h2>
+Nuestro equipo
+</h2>
 
-    <p class="sectionlead">
-      Las fotos, estadísticas y posiciones pendientes se podrán añadir
-      cuando las tengáis.
-    </p>
+<div class="roster">
 
-    <div class="roster">
+<div class="player">
+<div class="dorsal">#01</div>
+<h3>Yeri</h3>
+<div class="pos">Portero</div>
+</div>
 
-      <div class="player">
-        <div class="dorsal">#01</div>
-        <h3>Yeri</h3>
-        <div class="pos">Portero</div>
-      </div>
+<div class="player">
+<div class="dorsal">#02</div>
+<h3>Metola</h3>
+<div class="pos">Central / Lateral</div>
+</div>
 
-      <div class="player">
-        <div class="dorsal">#02</div>
-        <h3>Metola</h3>
-        <div class="pos">Central / Lateral</div>
-      </div>
+<div class="player">
+<div class="dorsal">#03</div>
+<h3>Txingu</h3>
+<div class="pos">Delantero</div>
+</div>
 
-      <div class="player">
-        <div class="dorsal">#03</div>
-        <h3>Txingu</h3>
-        <div class="pos">Delantero</div>
-      </div>
+<div class="player">
+<div class="dorsal">#05</div>
+<h3>Jatxo</h3>
+<div class="pos">Medio</div>
+</div>
 
-      <div class="player">
-        <div class="dorsal">#05</div>
-        <h3>Jatxo</h3>
-        <div class="pos">Medio</div>
-      </div>
+<div class="player">
+<div class="dorsal">#07</div>
+<h3>Pana Garci</h3>
+<div class="pos">Medio</div>
+</div>
 
-      <div class="player">
-        <div class="dorsal">#07</div>
-        <h3>Pana Garci</h3>
-        <div class="pos">Medio</div>
-      </div>
+<div class="player">
+<div class="dorsal">#08</div>
+<h3>Gorka</h3>
+<div class="pos">Delantero</div>
+</div>
 
-      <div class="player">
-        <div class="dorsal">#08</div>
-        <h3>Gorka</h3>
-        <div class="pos">Delantero</div>
-      </div>
+<div class="player">
+<div class="dorsal">#09</div>
+<h3>Pastri</h3>
+<div class="pos">Delantero</div>
+</div>
 
-      <div class="player">
-        <div class="dorsal">#09</div>
-        <h3>Pastri</h3>
-        <div class="pos">Delantero</div>
-      </div>
+<div class="player">
+<div class="dorsal">#10</div>
+<h3>Ioritz</h3>
+<div class="pos">Defensa</div>
+</div>
 
-      <div class="player">
-        <div class="dorsal">#10</div>
-        <h3>Ioritz</h3>
-        <div class="pos">Defensa</div>
-      </div>
+<div class="player">
+<div class="dorsal">#11</div>
+<h3>Iñaki</h3>
+<div class="pos">Banda derecha</div>
+</div>
 
-      <div class="player">
-        <div class="dorsal">#11</div>
-        <h3>Iñaki</h3>
-        <div class="pos">Banda derecha</div>
-      </div>
+<div class="player">
+<div class="dorsal">#12</div>
+<h3>Gazquez</h3>
+<div class="pos">Banda izquierda</div>
+</div>
 
-      <div class="player">
-        <div class="dorsal">#12</div>
-        <h3>Gazquez</h3>
-        <div class="pos">Banda izquierda</div>
-      </div>
+<div class="player">
+<div class="dorsal">#14</div>
+<h3>Calopa</h3>
+<div class="pos">Banda derecha</div>
+</div>
 
-      <div class="player">
-        <div class="dorsal">#14</div>
-        <h3>Calopa</h3>
-        <div class="pos">Banda derecha</div>
-      </div>
+<div class="player">
+<div class="dorsal">#15</div>
+<h3>Espu</h3>
+<div class="pos">Defensa</div>
+</div>
 
-      <div class="player">
-        <div class="dorsal">#15</div>
-        <h3>Espu</h3>
-        <div class="pos">Defensa</div>
-      </div>
+<div class="player">
+<div class="dorsal">#17</div>
+<h3>Theboss</h3>
+<div class="pos">Banda izquierda</div>
+</div>
 
-      <div class="player">
-        <div class="dorsal">#17</div>
-        <h3>Theboss</h3>
-        <div class="pos">Banda izquierda</div>
-      </div>
+<div class="player">
+<div class="dorsal">#19</div>
+<h3>Fonta</h3>
+<div class="pos">Banda derecha</div>
+</div>
 
-      <div class="player">
-        <div class="dorsal">#19</div>
-        <h3>Fonta</h3>
-        <div class="pos">Banda derecha</div>
-      </div>
+<div class="player">
+<div class="dorsal">#20</div>
+<h3>Tits</h3>
+<div class="pos">Medio</div>
+</div>
 
-      <div class="player">
-        <div class="dorsal">#20</div>
-        <h3>Tits</h3>
-        <div class="pos">Medio</div>
-      </div>
+<div class="player">
+<div class="dorsal">#22</div>
+<h3>Xabo</h3>
+<div class="pos">Defensa</div>
+</div>
 
-      <div class="player">
-        <div class="dorsal">#22</div>
-        <h3>Xabo</h3>
-        <div class="pos">Defensa</div>
-      </div>
+<div class="player">
+<div class="dorsal">#24</div>
+<h3>Luken</h3>
+<div class="pos">Banda izquierda</div>
+</div>
 
-      <div class="player">
-        <div class="dorsal">#24</div>
-        <h3>Luken</h3>
-        <div class="pos">Banda izquierda</div>
-      </div>
+</div>
 
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- PARTIDOS -->
+<!-- =========================
+     PARTIDOS
+========================= -->
 
 <section id="partidos">
 
-  <div class="container">
+<div class="container">
 
-    <div class="eyebrow">
-      Calendario
-    </div>
+<div class="eyebrow">
+Calendario
+</div>
 
-    <h2>
-      Partidos y resultados
-    </h2>
+<h2>
+Partidos y resultados
+</h2>
 
-    <p class="sectionlead">
-      Esta zona queda preparada para añadir el calendario cuando lo tengáis.
-    </p>
+<div class="fixture">
 
-    <div class="fixture">
+<div>
 
-      <div>
-        <div class="team">
-          NASA FC XD
-        </div>
+<div class="team">
+NASA FC XD
+</div>
 
-        <div class="placeholder">
-          Próximo partido
-        </div>
-      </div>
+<div class="placeholder">
+Próximo partido
+</div>
 
-      <div class="vs">
-        VS
-      </div>
+</div>
 
-      <div>
-        <div class="team">
-          Inter Mitente FC
-        </div>
+<div class="vs">
+VS
+</div>
 
-        <div class="placeholder">
-          26/09/2026 · 21:00
-        </div>
-      </div>
+<div>
 
-    </div>
+<div class="team">
+Inter Mitente FC
+</div>
 
-    <p class="sectionlead" style="margin-top:14px">
-      <strong>🏆 Pretemporada</strong> · 📍 San Jorge 1
-    </p>
+<div class="placeholder">
+26/09/2026 · 21:00
+</div>
 
-    <img
-      src="img/Cartel.jpeg"
-      alt="Cartel NASA FC XD 2 vs 0 Inter Mitente FC"
-      style="width:min(560px,100%);display:block;margin:28px auto 0;border-radius:16px;border:1px solid #292929"
-    >
+</div>
 
-    <div class="cards">
+</div>
 
-      <div class="card">
-        <div class="num">—</div>
-        <h3>Resultados</h3>
-        <p>Añade aquí los partidos disputados.</p>
-      </div>
+<p class="sectionlead" style="margin-top:14px">
+<strong>🏆 Pretemporada</strong> · 📍 San Jorge 1
+</p>
 
-      <div class="card">
-        <div class="num">—</div>
-        <h3>Estadísticas</h3>
-        <p>Goles, asistencias y partidos.</p>
-      </div>
+<img
+src="img/Cartel.jpeg"
+alt="Cartel NASA FC XD"
+style="
+width:min(560px,100%);
+display:block;
+margin:28px auto 0;
+border-radius:16px;
+border:1px solid #292929;
+"
+>
 
-    </div>
+<div class="cards">
 
-  </div>
+<div class="card">
+<div class="num">—</div>
+<h3>Resultados</h3>
+<p>Añade aquí los partidos disputados.</p>
+</div>
+
+<div class="card">
+<div class="num">—</div>
+<h3>Estadísticas</h3>
+<p>Goles, asistencias y partidos.</p>
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- CLUB -->
+<!-- =========================
+     CLASIFICACION
+========================= -->
+
+<section
+id="clasificacion"
+class="classification-section"
+>
+
+<div class="container">
+
+<div class="eyebrow">
+Competición
+</div>
+
+<h2>
+Clasificación
+</h2>
+
+<p class="sectionlead">
+TERCERA DIVISION
+</p>
+
+<div class="classification-box">
+
+<div class="classification-title">
+TERCERA DIVISION
+</div>
+
+
+<!-- CABECERA -->
+
+<div class="classification-head">
+
+<div>#</div>
+
+<div>Equipo</div>
+
+<div class="hide-class-mobile">PJ</div>
+
+<div class="hide-class-mobile">G</div>
+
+<div class="hide-class-mobile">E</div>
+
+<div class="hide-class-mobile">D</div>
+
+<div>P</div>
+
+</div>
+
+
+<!-- #1 -->
+
+<div class="classification-row first">
+
+<div class="classification-position">
+<span>#1</span>
+</div>
+
+<div class="classification-team">
+
+<div class="classification-logo">
+CAMEL<br>FC
+</div>
+
+<div class="classification-name">
+CAMEL FC
+</div>
+
+</div>
+
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+
+<div class="classification-stat classification-points">
+0
+</div>
+
+</div>
+
+
+<!-- #2 -->
+
+<div class="classification-row">
+
+<div class="classification-position">
+<span>#2</span>
+</div>
+
+<div class="classification-team">
+
+<div class="classification-logo">
+DEPORTIVO<br>CUBATA
+</div>
+
+<div class="classification-name">
+DEPORTIVO CUBATA
+</div>
+
+</div>
+
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+
+<div class="classification-stat classification-points">
+0
+</div>
+
+</div>
+
+
+<!-- #3 -->
+
+<div class="classification-row">
+
+<div class="classification-position">
+<span>#3</span>
+</div>
+
+<div class="classification-team">
+
+<div class="classification-logo">
+INTXIXU<br>F.T
+</div>
+
+<div class="classification-name">
+INTXIXU F.T
+</div>
+
+</div>
+
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+
+<div class="classification-stat classification-points">
+0
+</div>
+
+</div>
+
+
+<!-- #4 -->
+
+<div class="classification-row">
+
+<div class="classification-position">
+<span>#4</span>
+</div>
+
+<div class="classification-team">
+
+<div class="classification-logo">
+KTF
+</div>
+
+<div class="classification-name">
+KEIRRI TEAM F.C
+</div>
+
+</div>
+
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+
+<div class="classification-stat classification-points">
+0
+</div>
+
+</div>
+
+
+<!-- #5 -->
+
+<div class="classification-row">
+
+<div class="classification-position">
+<span>#5</span>
+</div>
+
+<div class="classification-team">
+
+<div class="classification-logo">
+LUIS<br>KARMELO
+</div>
+
+<div class="classification-name">
+LUIS KARMELO K.K.
+</div>
+
+</div>
+
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+
+<div class="classification-stat classification-points">
+0
+</div>
+
+</div>
+
+
+<!-- #6 NASA -->
+
+<div class="classification-row">
+
+<div class="classification-position">
+<span>#6</span>
+</div>
+
+<div class="classification-team">
+
+<div class="classification-logo">
+<img
+src="img/escudo.png"
+alt="NASA FC XD"
+>
+</div>
+
+<div class="classification-name">
+NASA FC XD
+</div>
+
+</div>
+
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+
+<div class="classification-stat classification-points">
+0
+</div>
+
+</div>
+
+
+<!-- #7 -->
+
+<div class="classification-row seventh">
+
+<div class="classification-position">
+<span>#7</span>
+</div>
+
+<div class="classification-team">
+
+<div class="classification-logo">
+ODM
+</div>
+
+<div class="classification-name">
+OLYMPIQUE DE MORCILLA
+</div>
+
+</div>
+
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+
+<div class="classification-stat classification-points">
+0
+</div>
+
+</div>
+
+
+<!-- #8 -->
+
+<div class="classification-row">
+
+<div class="classification-position">
+<span>#8</span>
+</div>
+
+<div class="classification-team">
+
+<div class="classification-logo">
+PATIO<br>TEAM
+</div>
+
+<div class="classification-name">
+PATIO TEAM
+</div>
+
+</div>
+
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+
+<div class="classification-stat classification-points">
+0
+</div>
+
+</div>
+
+
+<!-- #9 -->
+
+<div class="classification-row">
+
+<div class="classification-position">
+<span>#9</span>
+</div>
+
+<div class="classification-team">
+
+<div class="classification-logo">
+REAL<br>ESTELI
+</div>
+
+<div class="classification-name">
+REAL ESTELI
+</div>
+
+</div>
+
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+
+<div class="classification-stat classification-points">
+0
+</div>
+
+</div>
+
+
+<!-- #10 -->
+
+<div class="classification-row">
+
+<div class="classification-position">
+<span>#10</span>
+</div>
+
+<div class="classification-team">
+
+<div class="classification-logo">
+SDT
+</div>
+
+<div class="classification-name">
+SPORTING DE TOKIO
+</div>
+
+</div>
+
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+
+<div class="classification-stat classification-points">
+0
+</div>
+
+</div>
+
+
+<!-- #11 -->
+
+<div class="classification-row">
+
+<div class="classification-position">
+<span>#11</span>
+</div>
+
+<div class="classification-team">
+
+<div class="classification-logo">
+TURSI<br>FC
+</div>
+
+<div class="classification-name">
+TURSI FC
+</div>
+
+</div>
+
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+<div class="classification-stat hide-class-mobile">0</div>
+
+<div class="classification-stat classification-points">
+0
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     EL CLUB
+========================= -->
 
 <section id="club">
 
-  <div class="container about">
+<div class="container about">
 
-    <div>
+<div>
 
-      <div class="eyebrow">
-        Sobre nosotros
-      </div>
+<div class="eyebrow">
+Sobre nosotros
+</div>
 
-      <h2>
-        Un equipo, una familia.
-      </h2>
+<h2>
+Un equipo, una familia.
+</h2>
 
-      <p class="sectionlead">
-        NASA FC XD es un grupo de amigos unidos por el fútbol,
-        con ganas de competir, disfrutar de cada partido y seguir
-        creciendo juntos dentro y fuera del campo.
-      </p>
+<p class="sectionlead">
+NASA FC XD es un grupo de amigos unidos por el fútbol,
+con ganas de competir, disfrutar de cada partido y seguir
+creciendo juntos dentro y fuera del campo.
+</p>
 
-      <p class="sectionlead">
-        La historia del club empezó en 2022 y continúa partido a partido.
-      </p>
+<p class="sectionlead">
+La historia del club empezó en 2022 y continúa partido a partido.
+</p>
 
-    </div>
+</div>
 
-    <div class="info">
+<div class="info">
 
-      <div>
-        <b>📍 Ciudad</b>
-        Bilbo
-      </div>
+<div>
+<b>📍 Ciudad</b>
+Bilbo
+</div>
 
-      <div>
-        <b>🏟️ Instalación</b>
-        Colegio Berriochoa
-      </div>
+<div>
+<b>🏟️ Instalación</b>
+Colegio Berriochoa
+</div>
 
-      <div>
-        <b>🏆 Competición</b>
-        Fútbol Rápido Bizkaia
-      </div>
+<div>
+<b>🏆 Competición</b>
+Fútbol Rápido Bizkaia
+</div>
 
-      <div>
-        <b>📸 Galería</b>
-        Preparada para futuras fotos
-      </div>
+<div>
+<b>📸 Galería</b>
+Preparada para futuras fotos
+</div>
 
-    </div>
+</div>
 
-  </div>
+</div>
 
 </section>
 
 
-<!-- CONTACTO -->
+<!-- =========================
+     CONTACTO
+========================= -->
 
 <section id="contacto">
 
-  <div class="container">
+<div class="container">
 
-    <div class="eyebrow">
-      Contacto
-    </div>
+<div class="eyebrow">
+Contacto
+</div>
 
-    <h2>
-      Habla con NASA FC XD
-    </h2>
+<h2>
+Habla con NASA FC XD
+</h2>
 
-    <p class="sectionlead">
-      Rellena el formulario y recibirás el mensaje en nuestro correo electrónico.
-    </p>
+<p class="sectionlead">
+Rellena el formulario para contactar con el equipo.
+</p>
 
-    <form
-      action="https://formsubmit.co/pastrianlopeza@gmail.com"
-      method="POST"
-    >
+<form
+action="https://formsubmit.co/pastrianlopeza@gmail.com"
+method="POST"
+>
 
-      <input
-        type="text"
-        name="nombre"
-        placeholder="Nombre"
-        autocomplete="name"
-        required
-      >
+<input
+type="text"
+name="nombre"
+placeholder="Nombre"
+required
+>
 
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        autocomplete="email"
-        required
-      >
+<input
+type="email"
+name="email"
+placeholder="Email"
+required
+>
 
-      <textarea
-        name="mensaje"
-        placeholder="Estoy interesado en información"
-        required
-      ></textarea>
+<textarea
+name="mensaje"
+placeholder="Escribe tu mensaje..."
+required
+></textarea>
 
-      <input
-        type="hidden"
-        name="_subject"
-        value="Nuevo mensaje desde la web de NASA FC XD"
-      >
+<input
+type="hidden"
+name="_subject"
+value="Nuevo mensaje desde la web de NASA FC XD"
+>
 
-      <input
-        type="hidden"
-        name="_template"
-        value="table"
-      >
+<input
+type="hidden"
+name="_template"
+value="table"
+>
 
-      <input
-        type="hidden"
-        name="_captcha"
-        value="false"
-      >
+<input
+type="hidden"
+name="_captcha"
+value="false"
+>
 
-      <input
-        type="hidden"
-        name="_next"
-        id="volverNASA"
-        value=""
-      >
+<button
+class="btn primary"
+type="submit"
+>
+Enviar mensaje
+</button>
 
-      <button
-        class="btn primary"
-        type="submit"
-      >
-        Enviar mensaje
-      </button>
+</form>
 
-    </form>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-  <div class="container foot">
+<div class="container foot">
 
-    <div>
-      <strong>NASA FC XD</strong> · Un equipo, una familia
-    </div>
+<div>
+<strong>NASA FC XD</strong> · Un equipo, una familia
+</div>
 
-    <div>
-      Bilbo · Desde 2022 · Fútbol Rápido Bizkaia
-    </div>
+<div>
+Bilbo · Desde 2022 · Fútbol Rápido Bizkaia
+</div>
 
-  </div>
+</div>
 
 </footer>
-
-
-<script>
-
-document.getElementById("volverNASA").value =
-  window.location.origin + window.location.pathname;
-
-</script>
 
 </body>
 </html>
