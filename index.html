@@ -249,48 +249,19 @@ h2{
    EQUIPO
 ========================= */
 
-.roster{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
-  margin-top:34px;
-}
-
-.player{
-  position:relative;
-  overflow:hidden;
-  min-height:150px;
-  padding:22px;
-  border-radius:16px;
-  background:#121212;
-  border:1px solid #292929;
-}
-
-.player:before{
-  content:"";
-  position:absolute;
-  right:-25px;
-  top:-35px;
-  width:130px;
-  height:130px;
-  border-radius:50%;
-  background:rgba(255,106,0,.1);
-}
-
-.dorsal{
-  font-size:13px;
-  color:var(--orange);
-  font-weight:900;
-}
-
-.player h3{
-  margin:8px 0;
-  font-size:22px;
-}
-
-.pos{
-  color:var(--gray);
-}
+.roster{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:20px}
+.roster-group{margin-top:42px}
+.roster-heading{display:flex;align-items:center;gap:14px;margin:0 0 18px;padding-bottom:12px;border-bottom:2px solid var(--orange);font-size:clamp(25px,4vw,38px);font-weight:900;text-transform:uppercase;letter-spacing:-1px}
+.roster-heading .group-count{margin-left:auto;color:var(--orange);font-size:15px;letter-spacing:1px}
+.player{position:relative;isolation:isolate;overflow:hidden;min-height:220px;padding:22px;display:flex;flex-direction:column;justify-content:flex-end;border-radius:4px;background:linear-gradient(135deg,transparent 0 48%,rgba(255,106,0,.10) 48% 52%,transparent 52%),linear-gradient(145deg,#24282b 0%,#111416 58%,#080b0d 100%);border:1px solid #343a3e;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.player:before{content:attr(data-number);position:absolute;z-index:-1;top:-28px;right:-8px;color:rgba(255,106,0,.13);font-size:150px;line-height:1;font-weight:900;font-style:italic}
+.player:after{content:"";position:absolute;z-index:-1;left:0;right:0;bottom:0;height:5px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.player:hover{transform:translateY(-5px);border-color:var(--orange);box-shadow:0 16px 32px rgba(0,0,0,.28)}
+.player:hover:after{transform:scaleX(1)}
+.dorsal{position:absolute;top:18px;left:20px;color:var(--orange);font-size:15px;font-weight:900;letter-spacing:1px}
+.player h3{margin:0 0 7px;font-size:clamp(21px,2vw,27px);line-height:1;text-transform:uppercase}
+.pos{color:#c3c9cd;font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}
+.roster-note{margin:12px 0 0;color:var(--gray);font-size:14px;line-height:1.5}
 
 /* =========================
    PARTIDOS
@@ -570,8 +541,10 @@ footer{
   }
 
   .roster{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:repeat(2,minmax(0,1fr));
   }
+
+  .roster-group{margin-top:32px}
 
   .crest{
     order:-1;
@@ -625,6 +598,9 @@ footer{
     grid-template-columns:1fr;
   }
 
+  .roster-heading{font-size:24px}
+  .player{min-height:180px}
+
   .fixture{
     grid-template-columns:1fr;
   }
@@ -640,6 +616,54 @@ footer{
   .classification-name{
     font-size:13px;
   }
+}
+
+
+/* Carrusel de jugadores por posición */
+.roster-carousel{position:relative}
+.roster-carousel .roster{
+  display:flex;
+  gap:18px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  scrollbar-width:none;
+  padding:4px 3px 14px;
+  margin-top:0;
+}
+.roster-carousel .roster::-webkit-scrollbar{display:none}
+.roster-carousel .player{
+  flex:0 0 calc((100% - 36px)/3);
+  scroll-snap-align:start;
+  min-width:0;
+}
+.roster-arrow{
+  position:absolute;
+  z-index:5;
+  top:50%;
+  transform:translateY(-50%);
+  width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--orange);
+  background:rgba(8,11,13,.94);
+  color:var(--white);
+  display:grid;place-items:center;
+  font-size:28px;line-height:1;
+  box-shadow:0 8px 22px rgba(0,0,0,.35);
+  transition:background .2s ease,color .2s ease,opacity .2s ease;
+}
+.roster-arrow:hover{background:var(--orange);color:#111}
+.roster-arrow.prev{left:-16px}
+.roster-arrow.next{right:-16px}
+.roster-arrow:disabled{opacity:.25;cursor:default}
+.roster-arrow:disabled:hover{background:rgba(8,11,13,.94);color:var(--white)}
+@media(max-width:800px){
+  .roster-carousel .player{flex-basis:calc((100% - 18px)/2)}
+  .roster-arrow.prev{left:-8px}
+  .roster-arrow.next{right:-8px}
+}
+@media(max-width:520px){
+  .roster-carousel .player{flex-basis:85%}
+  .roster-arrow{width:38px;height:38px;font-size:24px}
 }
 
 </style>
@@ -798,111 +822,74 @@ Plantilla
 Nuestro equipo
 </h2>
 
+<div class="roster-note">Plantilla organizada por posición y número de dorsal.</div>
+
+      <div class="roster-group">
+        <h3 class="roster-heading">01 · Portero <span class="group-count">1 JUGADOR</span></h3>
+        <div class="roster-carousel">
+<button class="roster-arrow prev" type="button" aria-label="Jugadores anteriores" data-direction="-1">‹</button>
 <div class="roster">
-
-<div class="player">
-<div class="dorsal">#01</div>
-<h3>Yeri</h3>
-<div class="pos">Portero</div>
+          <div class="player" data-number="01"><div class="dorsal">#01</div><h3>Yeri</h3><div class="pos">Portero</div></div>
+        </div>
+<button class="roster-arrow next" type="button" aria-label="Jugadores siguientes" data-direction="1">›</button>
 </div>
+      </div>
 
-<div class="player">
-<div class="dorsal">#02</div>
-<h3>Metola</h3>
-<div class="pos">Central / Lateral</div>
+      <div class="roster-group">
+        <h3 class="roster-heading">02 · Centrales <span class="group-count">4 JUGADORES</span></h3>
+        <div class="roster-carousel">
+<button class="roster-arrow prev" type="button" aria-label="Jugadores anteriores" data-direction="-1">‹</button>
+<div class="roster">
+          <div class="player" data-number="02"><div class="dorsal">#02</div><h3>Metola</h3><div class="pos">Central</div></div>
+          <div class="player" data-number="10"><div class="dorsal">#10</div><h3>Ioritz</h3><div class="pos">Defensa</div></div>
+          <div class="player" data-number="15"><div class="dorsal">#15</div><h3>Espu</h3><div class="pos">Defensa</div></div>
+          <div class="player" data-number="22"><div class="dorsal">#22</div><h3>Xabo</h3><div class="pos">Defensa</div></div>
+        </div>
+<button class="roster-arrow next" type="button" aria-label="Jugadores siguientes" data-direction="1">›</button>
 </div>
+      </div>
 
-<div class="player">
-<div class="dorsal">#03</div>
-<h3>Txingu</h3>
-<div class="pos">Delantero</div>
+      <div class="roster-group">
+        <h3 class="roster-heading">03 · Medio <span class="group-count">3 JUGADORES</span></h3>
+        <div class="roster-carousel">
+<button class="roster-arrow prev" type="button" aria-label="Jugadores anteriores" data-direction="-1">‹</button>
+<div class="roster">
+          <div class="player" data-number="05"><div class="dorsal">#05</div><h3>Jatxo</h3><div class="pos">Medio</div></div>
+          <div class="player" data-number="07"><div class="dorsal">#07</div><h3>Pana Garci</h3><div class="pos">Medio</div></div>
+          <div class="player" data-number="20"><div class="dorsal">#20</div><h3>Tits</h3><div class="pos">Medio</div></div>
+        </div>
+<button class="roster-arrow next" type="button" aria-label="Jugadores siguientes" data-direction="1">›</button>
 </div>
+      </div>
 
-<div class="player">
-<div class="dorsal">#05</div>
-<h3>Jatxo</h3>
-<div class="pos">Medio</div>
+      <div class="roster-group">
+        <h3 class="roster-heading">04 · Bandas <span class="group-count">6 JUGADORES</span></h3>
+        <div class="roster-carousel">
+<button class="roster-arrow prev" type="button" aria-label="Jugadores anteriores" data-direction="-1">‹</button>
+<div class="roster">
+          <div class="player" data-number="11"><div class="dorsal">#11</div><h3>Iñaki</h3><div class="pos">Banda derecha</div></div>
+          <div class="player" data-number="12"><div class="dorsal">#12</div><h3>Gazquez</h3><div class="pos">Banda izquierda</div></div>
+          <div class="player" data-number="14"><div class="dorsal">#14</div><h3>Calopa</h3><div class="pos">Banda derecha</div></div>
+          <div class="player" data-number="17"><div class="dorsal">#17</div><h3>Theboss</h3><div class="pos">Banda izquierda</div></div>
+          <div class="player" data-number="19"><div class="dorsal">#19</div><h3>Fonta</h3><div class="pos">Banda derecha</div></div>
+          <div class="player" data-number="24"><div class="dorsal">#24</div><h3>Luken</h3><div class="pos">Banda izquierda</div></div>
+        </div>
+<button class="roster-arrow next" type="button" aria-label="Jugadores siguientes" data-direction="1">›</button>
 </div>
+      </div>
 
-<div class="player">
-<div class="dorsal">#07</div>
-<h3>Pana Garci</h3>
-<div class="pos">Medio</div>
+      <div class="roster-group">
+        <h3 class="roster-heading">05 · Delanteros <span class="group-count">3 JUGADORES</span></h3>
+        <div class="roster-carousel">
+<button class="roster-arrow prev" type="button" aria-label="Jugadores anteriores" data-direction="-1">‹</button>
+<div class="roster">
+          <div class="player" data-number="03"><div class="dorsal">#03</div><h3>Txingu</h3><div class="pos">Delantero</div></div>
+          <div class="player" data-number="08"><div class="dorsal">#08</div><h3>Gorka</h3><div class="pos">Delantero</div></div>
+          <div class="player" data-number="09"><div class="dorsal">#09</div><h3>Pastri</h3><div class="pos">Delantero</div></div>
+        </div>
+<button class="roster-arrow next" type="button" aria-label="Jugadores siguientes" data-direction="1">›</button>
 </div>
-
-<div class="player">
-<div class="dorsal">#08</div>
-<h3>Gorka</h3>
-<div class="pos">Delantero</div>
-</div>
-
-<div class="player">
-<div class="dorsal">#09</div>
-<h3>Pastri</h3>
-<div class="pos">Delantero</div>
-</div>
-
-<div class="player">
-<div class="dorsal">#10</div>
-<h3>Ioritz</h3>
-<div class="pos">Defensa</div>
-</div>
-
-<div class="player">
-<div class="dorsal">#11</div>
-<h3>Iñaki</h3>
-<div class="pos">Banda derecha</div>
-</div>
-
-<div class="player">
-<div class="dorsal">#12</div>
-<h3>Gazquez</h3>
-<div class="pos">Banda izquierda</div>
-</div>
-
-<div class="player">
-<div class="dorsal">#14</div>
-<h3>Calopa</h3>
-<div class="pos">Banda derecha</div>
-</div>
-
-<div class="player">
-<div class="dorsal">#15</div>
-<h3>Espu</h3>
-<div class="pos">Defensa</div>
-</div>
-
-<div class="player">
-<div class="dorsal">#17</div>
-<h3>Theboss</h3>
-<div class="pos">Banda izquierda</div>
-</div>
-
-<div class="player">
-<div class="dorsal">#19</div>
-<h3>Fonta</h3>
-<div class="pos">Banda derecha</div>
-</div>
-
-<div class="player">
-<div class="dorsal">#20</div>
-<h3>Tits</h3>
-<div class="pos">Medio</div>
-</div>
-
-<div class="player">
-<div class="dorsal">#22</div>
-<h3>Xabo</h3>
-<div class="pos">Defensa</div>
-</div>
-
-<div class="player">
-<div class="dorsal">#24</div>
-<h3>Luken</h3>
-<div class="pos">Banda izquierda</div>
-</div>
-
-</div>
+      </div>
 
 </div>
 
@@ -1558,6 +1545,37 @@ Bilbo · Desde 2022 · Fútbol Rápido Bizkaia
 </div>
 
 </footer>
+
+
+<script>
+document.querySelectorAll('.roster-carousel').forEach((carousel) => {
+  const track = carousel.querySelector('.roster');
+  const prev = carousel.querySelector('.roster-arrow.prev');
+  const next = carousel.querySelector('.roster-arrow.next');
+
+  function updateArrows() {
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft >= maxScroll - 2;
+    const hasOverflow = maxScroll > 2;
+    prev.style.visibility = hasOverflow ? 'visible' : 'hidden';
+    next.style.visibility = hasOverflow ? 'visible' : 'hidden';
+  }
+
+  function move(direction) {
+    const card = track.querySelector('.player');
+    if (!card) return;
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 18;
+    track.scrollBy({ left: direction * (card.getBoundingClientRect().width + gap), behavior: 'smooth' });
+  }
+
+  prev.addEventListener('click', () => move(-1));
+  next.addEventListener('click', () => move(1));
+  track.addEventListener('scroll', updateArrows, { passive: true });
+  window.addEventListener('resize', updateArrows);
+  updateArrows();
+});
+</script>
 
 </body>
 </html>
